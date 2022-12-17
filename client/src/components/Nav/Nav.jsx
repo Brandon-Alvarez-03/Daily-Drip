@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {AiOutlineDown} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {RiAccountPinBoxLine} from "react-icons/ri";
@@ -10,24 +11,22 @@ import "bootstrap/dist/css/bootstrap.css";
 function NavBar() {
   return (
     <Navbar expand="md" className={"nav-container"} fixed="top">
-      {/* <LinkContainer to="/" className="logo"> */}
+      {/* <Link to="/"> */}
         <Navbar.Brand>
-          <img src={logo} alt="that logo boiii" style={{height: 55}} />
+          <img src={logo} alt="that logo boiii" style={{height: 35}} />
         </Navbar.Brand>
-      {/* </LinkContainer> */}
+      {/* </Link> */}
 
       <Navbar.Collapse id="basic-navbar-nav">
-
-        {/* <Nav className="nav ms-auto">
-          <LinkContainer to="/signup">
+        <Nav className="nav ms-auto">
+          {/* <LinkContainer to="/signup"> */}
             <Nav.Link>SignUp</Nav.Link>
-          </LinkContainer>
+          {/* </LinkContainer> */}
 
-          <LinkContainer to="/login">
+          {/* <LinkContainer to="/login"> */}
             <Nav.Link>Login</Nav.Link>
-          </LinkContainer>
-        </Nav> */}
-
+          {/* </LinkContainer> */}
+        </Nav>
       </Navbar.Collapse>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggler" />
