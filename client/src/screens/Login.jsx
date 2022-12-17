@@ -3,12 +3,14 @@ import "./Login.css";
 function Login() {
   return (
     <div className="login-container">
-      <div className="login-wave">
-        <h1 className="login-header">
-          Welcome
-          <br />
-          Back
-        </h1>
+      <div className="login-wave-container">
+        <div className="login-wave">
+          <h1 className="login-header">
+            Welcome
+            <br />
+            Back
+          </h1>
+        </div>
       </div>
 
       <div className="login-form-container">

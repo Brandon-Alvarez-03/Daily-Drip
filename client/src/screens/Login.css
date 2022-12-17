@@ -10,6 +10,8 @@
   width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
+  padding-top: 100px;
+  background-color: var(--primary-color);
 }
 
 .login-container * {
@@ -22,12 +24,18 @@
   color: white;
 }
 
-.login-wave {
-  background-color: var(--primary-color);
-  height: 40vh;
+.login-wave-container {
+  height: 30vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-left: 10%;
+  justify-content: center;
+}
+
+.login-wave {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
 }
 
 .login-form-container {
@@ -37,6 +45,7 @@
   flex-direction: column;
   align-items: center;
   z-index: 99;
+  background-color: white;
 }
 
 .login-form {
