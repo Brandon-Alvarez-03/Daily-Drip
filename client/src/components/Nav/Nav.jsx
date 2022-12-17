@@ -7,12 +7,13 @@ import {Navbar, Nav, NavDropdown} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import logo from "../../assets/logos/droplet.png";
 import "bootstrap/dist/css/bootstrap.css";
+import "./Nav.css"
 
 function NavBar() {
   return (
     <Navbar expand="md" className={"nav-container"} fixed="top">
       {/* <Link to="/"> */}
-        <Navbar.Brand>
+        <Navbar.Brand className="logo">
           <img src={logo} alt="that logo boiii" style={{height: 35}} />
         </Navbar.Brand>
       {/* </Link> */}

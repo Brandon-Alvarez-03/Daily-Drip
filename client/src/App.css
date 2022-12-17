@@ -8,7 +8,12 @@
   width: 100vw;
 }
 
+.App * {
+  border: 1px solid blue
+}
+
 .main {
-  margin: 75px;
+  margin-top: 75px;
+  height: 100%;
 }
 

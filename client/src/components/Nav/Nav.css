@@ -1,0 +1,70 @@
+.nav-container {
+  height: var(--app-height-variable);
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 999;
+  background-color: white;
+}
+
+.logo {
+  border-radius: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logo * {
+  padding: 0;
+  margin: 0;
+  border-radius: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-text {
+  margin: 0;
+}
+
+.nav-toggler {
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 75px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .dropdown {
+    position: absolute;
+    top: 6px;
+    right: 0;
+  }
+
+  .logo {
+    margin-top: -5px;
+  }
+
+  .nav-toggler {
+    top: 8px;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav * {
+    margin-top: 3px;
+  }
+}
