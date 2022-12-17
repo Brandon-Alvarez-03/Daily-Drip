@@ -1,4 +1,4 @@
-import React from "react";
+import {useRef} from "react";
 import {Link} from "react-router-dom";
 import {AiOutlineDown} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
