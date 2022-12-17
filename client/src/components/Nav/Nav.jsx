@@ -12,18 +12,21 @@ import "./Nav.css";
 function NavBar() {
   return (
     <Navbar expand="sm" className={"nav-container"} fixed="top">
-      {/* <Link to="/"> */}
-      <Navbar.Brand className="logo">
-        <img src={logo} alt="that logo boiii" style={{height: 35}} />
-      </Navbar.Brand>
-      {/* </Link> */}
+      <Link to="/">
+        <Navbar.Brand className="logo">
+          <img src={logo} alt="that logo boiii" style={{height: 35}} />
+        </Navbar.Brand>
+      </Link>
 
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav ms-auto">
-        {/* <LinkContainer to="/signup"> */}
+          <LinkContainer to="/signup">
             <Nav.Link>Sign up</Nav.Link>
-        {/* </LinkContainer> */}
-          
+          </LinkContainer>
+
+          <LinkContainer to="/login">
+            <Nav.Link>Login </Nav.Link>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
 
@@ -43,7 +46,7 @@ function NavBar() {
       >
         <NavDropdown.Item as="button" className={`dropdown-text`}>
           {" "}
-          <LinkContainer to="/profile" className="dropdown-text">
+          <LinkContainer to="/" className="dropdown-text">
             <Nav.Link>
               <RiAccountPinBoxLine size={22} className="nav-icon" />
               Profile
