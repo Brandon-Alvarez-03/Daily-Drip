@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'dailydrip',
 ]
 
-AUTH_USER_MODEL = 'dailydrip.User'
+AUTH_USER_MODEL = 'auth.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
