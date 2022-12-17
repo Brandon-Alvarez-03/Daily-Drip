@@ -15,10 +15,9 @@ function Login() {
         <form className="login-form">
           <input type="text" placeholder="Name" />
           <input type="text" placeholder="Password" />
-          <button>Sign up</button>
+          <button className="login-btns login-btn">Log In</button>
         </form>
-        <p>or</p>
-        <button>Log in</button>
+        <button className="login-btns sign-up">Sign Up</button>
       </div>
     </div>
   );
