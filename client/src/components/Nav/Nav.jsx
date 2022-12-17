@@ -1,32 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import {AiOutlineDown} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {RiAccountPinBoxLine} from "react-icons/ri";
-import {Navbar, Nav, NavDropdown} from "react-bootstrap";
+import {Navbar, Nav, NavDropdown, Button} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import logo from "../../assets/logos/droplet.png";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Nav.css"
+import "./Nav.css";
 
 function NavBar() {
   return (
-    <Navbar expand="md" className={"nav-container"} fixed="top">
+    <Navbar expand="sm" className={"nav-container"} fixed="top">
       {/* <Link to="/"> */}
-        <Navbar.Brand className="logo">
-          <img src={logo} alt="that logo boiii" style={{height: 35}} />
-        </Navbar.Brand>
+      <Navbar.Brand className="logo">
+        <img src={logo} alt="that logo boiii" style={{height: 35}} />
+      </Navbar.Brand>
       {/* </Link> */}
 
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="nav ms-auto">
-          {/* <LinkContainer to="/signup"> */}
-            <Nav.Link>SignUp</Nav.Link>
-          {/* </LinkContainer> */}
-
-          {/* <LinkContainer to="/login"> */}
-            <Nav.Link>Login</Nav.Link>
-          {/* </LinkContainer> */}
+        {/* <LinkContainer to="/signup"> */}
+            <Nav.Link>Sign up</Nav.Link>
+        {/* </LinkContainer> */}
+          
         </Nav>
       </Navbar.Collapse>
 
