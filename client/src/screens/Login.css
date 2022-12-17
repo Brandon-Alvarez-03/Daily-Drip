@@ -6,11 +6,10 @@
 }
 
 .login-container {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
-  padding-top: 100px;
   background-color: var(--primary-color);
 }
 
