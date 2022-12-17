@@ -1,5 +1,6 @@
 import React from "react";
-import {Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Tabs from "../components/Tabs/Tabs.jsx"
 import Profile from "./Profile.jsx";
 import Login from "./Login.jsx";
 import Signup from "./Signup.jsx";
@@ -9,13 +10,14 @@ import Newsletter from "./Newsletter.jsx";
 function Main() {
   return (
     <div className="main">
-      <Routes>
+      <Tabs/>
+      {/* <Routes>
         <Route path="/" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/tracker" element={<Tracker />} />
         <Route path="/newsletter" element={<Newsletter />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }

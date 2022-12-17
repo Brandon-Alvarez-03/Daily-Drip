@@ -4,12 +4,14 @@
   box-sizing: border-box;
   z-index: 999;
   background-color: white;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.12);
 }
 
 .logo {
   border-radius: 100%;
   padding: 0;
   margin: 0;
+  margin-left: 10px;
 }
 
 .logo * {

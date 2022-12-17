@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import NavBar from "./components/Nav/Nav.jsx";
-import Main from "./screens/Main.jsx";
+import Main from "./pages/Main.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import "./App.css";
 

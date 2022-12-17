@@ -1,0 +1,37 @@
+.tabs-container {
+  width: 100vh;
+}
+
+.tabs {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(100, 100, 100, 0.12);
+}
+
+.tabs li {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  flex: 1;
+  font-size: smaller;
+}
+
+.tabs li.active {
+  background-color: rgba(100, 100, 100, 0.08);
+  font-weight: 600;
+  color: rgba(100, 100, 100, 0.9);
+}
+
+.tab-content > div {
+  display: none;
+  padding: 20px;
+  border: 1px solid rgba(100, 100, 100, 0.12);
+}
+
+.tab-content > div.active {
+  display: block;
+  height: 100%;
+}
