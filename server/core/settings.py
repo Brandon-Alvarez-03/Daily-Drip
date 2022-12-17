@@ -43,9 +43,10 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'dailydrip',
+    'dailyauth',
 ]
 
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'dailyauth.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

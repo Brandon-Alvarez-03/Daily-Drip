@@ -1,4 +1,5 @@
 from .models import User
+from dailydrip.models import Day
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.settings import api_settings
@@ -6,10 +7,10 @@ from django.contrib.auth.models import update_last_login
 from django.core.exceptions import ObjectDoesNotExist
     
 class UserSerializer(serializers.ModelSerializer):
-    
+    days = serializers.PrimaryKeyRelatedField(many=True, queryset=Day.objects.all())   
     class Meta:
         model = User
-        fields = ['id','username', 'email', 'avatar', 'date_joined', 'updated_at']
+        fields = ['id','username', 'email', 'avatar', 'date_joined', 'updated_at', 'days']
 
 class LoginSerializer(TokenObtainPairSerializer):
 
