@@ -10,7 +10,9 @@ function Login() {
       username: username.current.value,
       password: password.current.value,
     };
-    console.log(user);
+
+    username.current.value = "";
+    password.current.value = "";
   }
   return (
     <div className="login-container">
