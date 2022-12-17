@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {AiOutlineDown} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
 import {RiAccountPinBoxLine} from "react-icons/ri";
-import {Navbar, Nav, NavDropdown, Button} from "react-bootstrap";
+import {Navbar, Nav, NavDropdown} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import logo from "../../assets/logos/droplet.png";
 import "bootstrap/dist/css/bootstrap.css";
