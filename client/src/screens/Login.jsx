@@ -1,41 +1,51 @@
-import React, { useRef } from "react";
-import "./Login.css";
-function Login() {
-  const username = useRef();
-  const password = useRef();
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { signIn } from '../services/user'
+import { useEffect } from "react";
+import { useForm } from 'react-hook-form'
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    let user = {
-      username: username.current.value,
-      password: password.current.value,
-    };
+const Login = () => {
+  const { loading, userInfo } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { register, handleSubmit } = useForm()
 
-    username.current.value = "";
-    password.current.value = "";
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/', { replace: true })
+    }
+  }, [navigate, userInfo])
+
+  const submitForm = (data) => {
+    dispatch(signIn(data))
   }
-  return (
-    <div className="login-container">
-      <div className="login-wave-container">
-        <div className="login-wave">
-          <h1 className="login-header">
-            Welcome
-            <br />
-            Back
-          </h1>
-        </div>
-      </div>
 
-      <div className="login-form-container">
-        <form className="login-form" onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" placeholder="Name" ref={username} />
-          <input type="text" placeholder="Password" ref={password} />
-          <button className="login-btns login-btn">Log In</button>
-        </form>
-        <button className="login-btns sign-up">Sign Up</button>
+  return (
+    <form onSubmit={handleSubmit(submitForm)}>
+      <div className='form-group'>
+        <label htmlFor='username'>Username</label>
+        <input
+          type='text'
+          className='form-input'
+          {...register('username')}
+          required
+        />
       </div>
-    </div>
-  );
+      <div className='form-group'>
+        <label htmlFor='password'>Password</label>
+        <input
+          type='password'
+          className='form-input'
+          {...register('password')}
+          required
+        />
+      </div>
+      <button type='submit' className='button' disabled={loading}>
+        {loading ? <h1>Loading...</h1>  : 'Login'}
+      </button>
+      </form>
+  )
 }
 
-export default Login;
+export default Login
+
