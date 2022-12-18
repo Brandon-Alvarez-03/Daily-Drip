@@ -39,22 +39,6 @@ function NavBar() {
         </Navbar.Text>
       )}
 
-      <Navbar.Collapse id="basic-navbar-nav">
-        {userInfo && (
-          <Nav className="nav ms-auto">
-            <LinkContainer to="/signup">
-              <Nav.Link>Sign up</Nav.Link>
-            </LinkContainer>
-
-            <LinkContainer to="/login">
-              <Nav.Link>Login </Nav.Link>
-            </LinkContainer>
-          </Nav>
-        )}
-      </Navbar.Collapse>
-
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggler" />
-
       <NavDropdown
         title={
           <div>

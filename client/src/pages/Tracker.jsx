@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {FaShower, FaMinusCircle} from "react-icons/fa";
 
 function Tracker() {
   const [waterUsages, setWaterUsages] = useState([]);
@@ -22,7 +23,7 @@ function Tracker() {
   );
 
   // Convert gallons to liters
-  const totalLiters = totalGallons * 3.78541;
+  const totalLiters = Math.round(totalGallons * 3.78541, 1);
 
   return (
     <div>
@@ -32,30 +33,23 @@ function Tracker() {
       </h6>
       {waterUsages.some((usage) => usage.gallons === 10) ? (
         <button onClick={() => handleRemoveUsage(10)}>
-          -10
+          <FaMinusCircle />
         </button>
       ) : (
         <button onClick={() => handleAddUsage(10)}>
-          +10
+          {" "}
+          <FaShower />
         </button>
       )}
       {waterUsages.some((usage) => usage.gallons === 20) ? (
-        <button onClick={() => handleRemoveUsage(20)}>
-          -20
-        </button>
+        <button onClick={() => handleRemoveUsage(20)}>-20</button>
       ) : (
-        <button onClick={() => handleAddUsage(20)}>
-          +20
-        </button>
+        <button onClick={() => handleAddUsage(20)}>+20</button>
       )}
       {waterUsages.some((usage) => usage.gallons === 30) ? (
-        <button onClick={() => handleRemoveUsage(30)}>
-          -30
-        </button>
+        <button onClick={() => handleRemoveUsage(30)}>-30</button>
       ) : (
-        <button onClick={() => handleAddUsage(30)}>
-          +30
-        </button>
+        <button onClick={() => handleAddUsage(30)}>+30</button>
       )}
 
       <br />
