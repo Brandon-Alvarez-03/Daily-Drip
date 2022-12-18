@@ -36,7 +36,7 @@
 
 .tab-content > div {
   display: none;
-  padding: 20px;
+  /* padding: 20px; */
   border: 1px solid rgba(100, 100, 100, 0.12);
 }
 
