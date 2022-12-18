@@ -51,3 +51,8 @@ Victor Apaez
 - cors-header
 - python.env
 - pyscopg2-binary
+
+## Credits
+[Water Animation](https://codepen.io/jaronwhite/pen/zrmozE)
+[Redux Tutorial](https://blog.logrocket.com/handling-user-authentication-redux-toolkit/)
+
