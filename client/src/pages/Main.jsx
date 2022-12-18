@@ -1,7 +1,6 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
 import Tabs from "../components/Tabs/Tabs.jsx";
-import Profile from "./Profile.jsx";
 import DashBoard from "./DashBoard.jsx";
 import Login from "./Login.jsx";
 import Signup from "./Signup.jsx";
