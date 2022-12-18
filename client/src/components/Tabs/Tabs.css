@@ -12,7 +12,8 @@
   border: 1px solid rgba(100, 100, 100, 0.12);
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: rgba(100, 149, 237, 1.0);
+  color: white;
 }
 
 .tabs li {
@@ -29,7 +30,7 @@
 .tabs li.active {
   background-color: rgba(100, 100, 100, 0.08);
   font-weight: 600;
-  color: rgba(100, 100, 100, 0.9);
+  color: rgb(255, 170, 0);
 }
 
 .tab-content > div {
