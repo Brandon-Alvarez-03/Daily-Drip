@@ -1,0 +1,40 @@
+.card-container {
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.card-container * {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.card-img {
+  background: url("https://www.pecanstreet.org/wp-content/uploads/2018/06/background-blur-clean-290678.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+}
+
+.card-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card-title {
+  margin-bottom: 10px;
+}
+
+.card-description {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.card-icons-container {
+  color: rgb(154, 154, 154);
+}
