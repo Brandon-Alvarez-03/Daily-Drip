@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {FaShower, FaMinusCircle} from "react-icons/fa";
 
 function Tracker() {
-  const [waterUsages, setWaterUsages] = useState([]);
+  const initialUsages = JSON.parse(localStorage.getItem("waterUsages")) || [];
+  const [waterUsages, setWaterUsages] = useState(initialUsages);
 
   const handleAddUsage = (gallons) => {
     const newUsage = {gallons};
@@ -16,6 +17,21 @@ function Tracker() {
     setWaterUsages(updatedUsages);
   };
 
+  // Save the waterUsages state to local storage whenever it is updated
+  useEffect(() => {
+    localStorage.setItem("waterUsages", JSON.stringify(waterUsages));
+  }, [waterUsages]);
+
+  // Clear the waterUsages state in local storage at midnight
+  useEffect(() => {
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0);
+    const timer = setTimeout(() => {
+      localStorage.removeItem("waterUsages");
+    }, midnight.getTime() - Date.now());
+    return () => clearTimeout(timer);
+  }, []);
+
   // Calculate total gallons of water used
   const totalGallons = waterUsages.reduce(
     (acc, usage) => acc + usage.gallons,
@@ -23,7 +39,7 @@ function Tracker() {
   );
 
   // Convert gallons to liters
-  const totalLiters = Math.round(totalGallons * 3.78541, 1);
+  const totalLiters = Math.round(totalGallons * 3.78541);
 
   return (
     <div>
