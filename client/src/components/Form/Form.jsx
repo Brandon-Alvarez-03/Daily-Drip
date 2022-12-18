@@ -1,10 +1,10 @@
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { createDay } from "../../services/day"
+import {useRef} from "react";
+import {useNavigate} from "react-router-dom";
+import {createDay} from "../../services/day";
 import categoryOptions from "./categories";
-import "./Form.css"
+import "./Form.css";
 
-function Form() {
+function Form({totalLiters}) {
   const descriptionRef = useRef();
   const categoryRef = useRef();
   const usageRef = useRef();
@@ -26,42 +26,43 @@ function Form() {
   };
 
   return (
-      <div className="create-day-container">
-        <form onSubmit={handleSubmit} className="day-details">
-            <input
-              type="text"
-              id="description"
-              placeholder="Description"
-              name="description"
-              ref={descriptionRef}
-            />
-            <input
-              type="number"
-              id="usage"
-              placeholder="Gals or Liters"
-              name="usage"
-              ref={usageRef}
-            />
-            <select
-              name="category"
-              className="select"
-              ref={categoryRef}
-              id="category"
-              placeholder="Category"
-            >
-              {categoryOptions.map((option, index) => {
-                return (
-                  <option value={option.category} key={index}>
-                    {option.title}
-                  </option>
-                );
-              })}
-            </select>
-            <button type="submit" id="day-button">
-              Submit
-            </button>
-        </form>
-      </div>
+    <div className="create-day-container">
+      <form onSubmit={handleSubmit} className="day-details">
+        <input
+          type="text"
+          id="description"
+          placeholder="Description"
+          name="description"
+          ref={descriptionRef}
+        />
+        <input
+          type="number"
+          id="usage"
+          placeholder="Gals or Liters"
+          name="usage"
+          ref={usageRef}
+          value={totalLiters}
+        />
+        <select
+          name="category"
+          className="select"
+          ref={categoryRef}
+          id="category"
+          placeholder="Category"
+        >
+          {categoryOptions.map((option, index) => {
+            return (
+              <option value={option.category} key={index}>
+                {option.title}
+              </option>
+            );
+          })}
+        </select>
+        <button type="submit" id="day-button">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
 
