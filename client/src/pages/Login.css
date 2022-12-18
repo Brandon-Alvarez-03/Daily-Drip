@@ -76,6 +76,8 @@
   border: 1px solid var(--text-secondary-color);
   background-color: var(--text-primary-color);
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .login-btn {
