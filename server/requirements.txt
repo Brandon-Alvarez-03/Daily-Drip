@@ -31,3 +31,4 @@ sqlparse==0.4.3
 stack-data==0.6.2
 traitlets==5.7.1
 wcwidth==0.2.5
+whitenoise==6.2.0
