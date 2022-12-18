@@ -3,7 +3,7 @@ import NavBar from "./components/Nav/Nav.jsx";
 import Main from "./pages/Main.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import "./App.css";
-
+import Login from "./pages/Login.jsx";
 function App() {
   const scrollableRef = useRef(null);
   const navRef = useRef(null);
