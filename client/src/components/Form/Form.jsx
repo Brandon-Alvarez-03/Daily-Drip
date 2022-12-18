@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { createDay } from "../../services/day"
 import categoryOptions from "./categories";
+import "./Form.css"
 
 function Form() {
   const descriptionRef = useRef();
@@ -37,7 +38,7 @@ function Form() {
             <input
               type="number"
               id="usage"
-              placeholder="Usage"
+              placeholder="Gals or Liters"
               name="usage"
               ref={usageRef}
             />
