@@ -9,11 +9,11 @@ import {LinkContainer} from "react-router-bootstrap";
 import logo from "../../assets/logos/droplet.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
-import {getUser} from "../../services/user";
-import {logout} from "../../store/slices/authSlice";
+import { getUser } from "../../services/user";
+import { logout } from "../../store/slices/authSlice";
 
 function NavBar() {
-  const {token, userInfo} = useSelector((state) => state.auth);
+  const { token, userInfo } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function NavBar() {
     <Navbar expand="sm" className={"nav-container"} fixed="top">
       <Link to="/">
         <Navbar.Brand className="logo">
-          <img src={logo} alt="that logo boiii" style={{height: 35}} />
+          <img src={logo} alt="that logo boiii" style={{ height: 35 }} />
         </Navbar.Brand>
       </Link>
 
