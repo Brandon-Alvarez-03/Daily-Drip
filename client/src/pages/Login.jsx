@@ -57,7 +57,7 @@ function Login() {
             {loading ? <h1>Loading...</h1> : "Login In"}
           </button>
         </form>
-        ;<button className="login-btns sign-up">Sign Up</button>
+        <button className="login-btns sign-up">Sign Up</button>
       </div>
     </div>
   );
