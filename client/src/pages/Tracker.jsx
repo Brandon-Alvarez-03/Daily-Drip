@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
-import {FaShower, FaMinusCircle} from "react-icons/fa";
+import {FaShower, FaToilet, FaSink} from "react-icons/fa";
+import {AiOutlineCar} from "react-icons/ai";
+// import LocalCarWashIcon from "@mui/icons-material/LocalCarWash";
 
 function Tracker() {
   const initialUsages = JSON.parse(localStorage.getItem("waterUsages")) || [];
@@ -49,7 +51,7 @@ function Tracker() {
       </h6>
       {waterUsages.some((usage) => usage.gallons === 10) ? (
         <button onClick={() => handleRemoveUsage(10)}>
-          <FaMinusCircle />
+          <FaShower style={{color: "#6495ED"}} />
         </button>
       ) : (
         <button onClick={() => handleAddUsage(10)}>
@@ -58,14 +60,42 @@ function Tracker() {
         </button>
       )}
       {waterUsages.some((usage) => usage.gallons === 20) ? (
-        <button onClick={() => handleRemoveUsage(20)}>-20</button>
+        <button onClick={() => handleRemoveUsage(20)}>
+          <FaToilet style={{color: "#6495ED"}} />
+        </button>
       ) : (
-        <button onClick={() => handleAddUsage(20)}>+20</button>
+        <button onClick={() => handleAddUsage(20)}>
+          <FaToilet />
+        </button>
       )}
       {waterUsages.some((usage) => usage.gallons === 30) ? (
-        <button onClick={() => handleRemoveUsage(30)}>-30</button>
+        <button onClick={() => handleRemoveUsage(30)}>
+          <FaSink style={{color: "#6495ED"}} />
+        </button>
       ) : (
-        <button onClick={() => handleAddUsage(30)}>+30</button>
+        <button onClick={() => handleAddUsage(30)}>
+          <FaSink />
+        </button>
+      )}
+      {waterUsages.some((usage) => usage.gallons === 22) ? (
+        <button onClick={() => handleRemoveUsage(22)}>
+          <AiOutlineCar style={{color: "#6495ED"}} />
+          <br />
+          <p
+            style={
+              ({fontSize: "6px"},
+              {padding: "0px"},
+              {margin: "0px"},
+              {color: "#6495ED"})
+            }
+          >
+            Car Wash
+          </p>
+        </button>
+      ) : (
+        <button onClick={() => handleAddUsage(22)}>
+          <AiOutlineCar />
+        </button>
       )}
 
       <br />
