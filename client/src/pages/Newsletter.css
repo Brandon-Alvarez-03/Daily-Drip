@@ -1,0 +1,23 @@
+.articles-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  row-gap: 50px;
+  box-sizing: border-box;
+  justify-items: center;
+  align-items: center;
+  padding: 20px;
+}
+
+@media (max-width: 1000px) {
+  .articles-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .articles-container {
+    grid-template-columns: 1fr;
+  }
+}

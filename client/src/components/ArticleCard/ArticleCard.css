@@ -5,6 +5,8 @@
   max-width: 350px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  cursor: pointer;
+  text-align: left;
 }
 
 .card-container * {
@@ -13,7 +15,6 @@
 }
 
 .card-img {
-  background: url("https://www.pecanstreet.org/wp-content/uploads/2018/06/background-blur-clean-290678.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 200px;
@@ -32,6 +33,12 @@
 
 .card-description {
   text-align: left;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.card-info > span {
+  color: rgb(100, 162, 182);
   margin-bottom: 25px;
 }
 
