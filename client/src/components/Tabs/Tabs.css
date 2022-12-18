@@ -1,6 +1,7 @@
 .tabs-container {
   width: 100vw;
   margin: 0;
+  /* box-sizing: content-box; */
 }
 
 .tabs {
@@ -12,8 +13,8 @@
   border: 1px solid rgba(100, 100, 100, 0.12);
   align-items: center;
   justify-content: center;
-  background-color: rgba(100, 149, 237, 1.0);
-  color: white;
+  background-color: rgba(100, 149, 237, 0.35);
+  color: rgb(53, 92, 124);
 }
 
 .tabs li {
