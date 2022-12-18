@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "../services/user";
 import { useEffect } from "react";
@@ -57,7 +57,9 @@ function Login() {
             {loading ? <h1>Loading...</h1> : "Login In"}
           </button>
         </form>
-        ;<button className="login-btns sign-up">Sign Up</button>
+        <Link to="/signup" className="login-btns sign-up">
+          Sign Up
+        </Link>
       </div>
     </div>
   );

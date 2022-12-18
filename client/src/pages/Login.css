@@ -44,7 +44,7 @@
   flex-direction: column;
   align-items: center;
   z-index: 99;
-  background: rgb(40, 40, 40);
+  background: white;
 }
 
 .login-form {
@@ -76,6 +76,8 @@
   border: 1px solid var(--text-secondary-color);
   background-color: var(--text-primary-color);
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .login-btn {

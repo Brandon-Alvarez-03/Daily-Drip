@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
 import { getDays } from "../services/day";
 import categoryOptions from "../components/Form/categories";
+import { useSelector } from "react-redux";
 
 function DashBoard() {
   const [days, setDays] = useState([]);
   const [query, setQuery] = useState("");
+  const { loading, userInfo } = useSelector((state) => state.auth);
 
   function prettyDate(time) {
     let date = new Date(time);
@@ -19,16 +21,18 @@ function DashBoard() {
     };
     fetchPosts();
   }, []);
-
   const filtered = useMemo(
     () =>
       days.filter((day) => {
-        return day.category.toLowerCase().includes(query) && day.owner === 1;
+        return (
+          day.category.toLowerCase().includes(query) &&
+          day.owner === userInfo.id
+        );
       }),
     [days, query]
   );
 
-  if (!Object.keys(days).length) return <h1>Loading...</h1>;
+  // if (!Object.keys(days).length) return <h1>Loading...</h1>;
 
   return (
     <div className="dashboard-container">
