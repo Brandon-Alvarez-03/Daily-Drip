@@ -1,21 +1,24 @@
-import { useSelector } from 'react-redux'
-import { NavLink, Outlet } from 'react-router-dom'
+import { useSelector } from "react-redux";
+import { NavLink, Outlet } from "react-router-dom";
+import "./protectedRoute.css";
 
 const ProtectedRoute = () => {
-  const { userInfo } = useSelector((state) => state.auth)
+  const { userInfo } = useSelector((state) => state.auth);
 
   if (!userInfo) {
     return (
-      <div className='unauthorized'>
-        <h1>Unauthorized :(</h1>
-        <span>
-          <NavLink to='/login'>Login</NavLink> to gain access
-        </span>
+      <div className="unauthorized">
+        <NavLink to="/login">
+          <h1 className="dd-title">DAILY DRIP</h1>
+        </NavLink>
+        <div className="drop-container">
+          <div className="drop"></div>
+        </div>
       </div>
-    )
+    );
   }
 
-  return <Outlet />
-}
+  return <Outlet />;
+};
 
-export default ProtectedRoute
+export default ProtectedRoute;

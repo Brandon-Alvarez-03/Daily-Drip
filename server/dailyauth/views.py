@@ -7,6 +7,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.http import HttpResponse
  
       
 class UserViewSet(viewsets.ModelViewSet):
@@ -49,6 +50,11 @@ class RegistrationViewSet(ModelViewSet, TokenObtainPairView):
     http_method_names = ['post']
 
     def create(self, request, *args, **kwargs):
+      try:
+        user = User.objects.get(username=request.data["username"])
+      except User.DoesNotExist:
+        user = None
+      if user == None :  
         serializer = self.get_serializer(data=request.data)
 
         serializer.is_valid(raise_exception=True)
@@ -63,6 +69,7 @@ class RegistrationViewSet(ModelViewSet, TokenObtainPairView):
             "refresh": res["refresh"],
             "access": res["access"]
         }, status=status.HTTP_201_CREATED)
+      return HttpResponse("User already exist")
 
 
 class RefreshViewSet(viewsets.ViewSet, TokenRefreshView):
