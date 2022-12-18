@@ -31,7 +31,7 @@ function NavBar() {
       </Link>
 
       {userInfo && (
-        <Navbar.Text>
+        <Navbar.Text className="username-display">
           <span className={"signed-in-text"}>Signed in as: </span>
           <Link to="/dashboard" className="logged-in-username">
             {userInfo.username}
@@ -74,7 +74,7 @@ function NavBar() {
           </NavDropdown.Item>
         )}
 
-        {userInfo && <NavDropdown.Divider />}
+        {!userInfo && <NavDropdown.Divider />}
 
         {!userInfo && (
           <NavDropdown.Item as="button" className="dropdown-text">

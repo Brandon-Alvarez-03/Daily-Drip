@@ -5,10 +5,42 @@
   align-items: center;
 }
 
+
+
 .day-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 40%;
+  justify-content: center;
+}
+
+.day-details * {
+  width: 90%;
+  margin: 10px 0;
+}
+
+.day-details input,
+.day-details select,
+.day-details textarea {
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.day-details input[type="submit"],
+.day-details button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 15px;
+  font-size: 14px;
+}
+
+.day-details input[type="submit"]:hover,
+.day-details button:hover {
+  background-color: #45a049;
 }

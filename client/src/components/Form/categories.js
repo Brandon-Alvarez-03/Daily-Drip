@@ -17,7 +17,7 @@ const categoryOptions = [
   {
     index: 3,
     category: 'carWash',
-    title: "Car Wash",
+    title: "CarWash",
   },
   {
     index: 4,
@@ -26,13 +26,13 @@ const categoryOptions = [
   },
   {
     index: 5,
-    category: 'eating',
-    title: "Eating Out",
+    category: 'eatingOut',
+    title: "EatingOut",
   },
   {
     index: 6,
-    category: 'washHand',
-    title: "Washing Hands",
+    category: 'washHands',
+    title: "WashingHands",
   },
   {
     index: 7,
@@ -43,8 +43,12 @@ const categoryOptions = [
     index: 8,
     category: 'other',
     title: "Other",
+  },
+  {
+    index: 9,
+    category: 'all',
+    title: "All",
   }
-
 ];
 
 export default categoryOptions
