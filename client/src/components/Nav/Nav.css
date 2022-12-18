@@ -73,6 +73,10 @@
 }
 
 @media screen and (max-width: 576px) {
+  .nav-dropdown {
+    margin-top: 7px;
+    margin-right: 10px;
+  }
   .dropdown {
     position: absolute;
     top: 6px;
