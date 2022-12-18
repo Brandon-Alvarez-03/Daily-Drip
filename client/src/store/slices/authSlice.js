@@ -10,7 +10,6 @@ const initialState = {
   userInfo: null,
   token,
   error: null,
-  success: false,
 };
 
 const authSlice = createSlice({
@@ -44,7 +43,8 @@ const authSlice = createSlice({
     },
     [signUp.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.success = true;
+      state.userInfo = payload;
+      state.token = payload.access;
     },
     [signUp.rejected]: (state, { payload }) => {
       state.loading = false;

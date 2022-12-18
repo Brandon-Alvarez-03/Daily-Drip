@@ -3,8 +3,9 @@
   width: 100%;
   box-sizing: border-box;
   z-index: 999;
-  background-color: white;
+  background: rgb(40,40,40);
   border-bottom: 1px solid rgba(100, 100, 100, 0.12);
+  color: white;
 }
 
 .logo {
