@@ -50,62 +50,80 @@ function Tracker() {
       <h6>
         Select your daily activities to track how your daily water usage fares!
       </h6>
-      {waterUsages.some((usage) => usage.gallons === 18) ? (
-        <button onClick={() => handleRemoveUsage(18)}>
-          <FaShower style={{color: "#6495ED"}} />
-        </button>
-      ) : (
-        <button onClick={() => handleAddUsage(18)}>
-          {" "}
-          <FaShower />
-        </button>
-      )}
-      {waterUsages.some((usage) => usage.gallons === 3.5) ? (
-        <button onClick={() => handleRemoveUsage(3.5)}>
-          <FaToilet style={{color: "#6495ED"}} />
-        </button>
-      ) : (
-        <button onClick={() => handleAddUsage(3.5)}>
-          <FaToilet />
-        </button>
-      )}
-      {waterUsages.some((usage) => usage.gallons === 20) ? (
-        <button
-          style={{color: "#6495ED"}}
-          onClick={() => handleRemoveUsage(20)}
-        >
-          <FaSink style={{color: "#6495ED"}} size={40} />
-          <br />
-          Dishes
-        </button>
-      ) : (
-        <button onClick={() => handleAddUsage(20)}>
-          <FaSink size={40} />
-          <br />
-          Dishes
-        </button>
-      )}
-      {waterUsages.some((usage) => usage.gallons === 60) ? (
-        <button
-          style={{color: "#6495ED"}}
-          onClick={() => handleRemoveUsage(60)}
-        >
-          <AiOutlineCar style={{color: "#6495ED"}} size={40} />
-          <br />
-          Car Wash
-        </button>
-      ) : (
-        <button onClick={() => handleAddUsage(60)}>
-          <AiOutlineCar size={40} />
-          <br />
-          Car Wash
-        </button>
-      )}
+      <div className="usage-options">
+        {waterUsages.some((usage) => usage.gallons === 18) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(18)}
+          >
+            <FaShower size={40} />
+            <br />
+            Shower
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(18)}>
+            {" "}
+            <FaShower size={40} />
+            <br />
+            Shower
+          </button>
+        )}
+        {waterUsages.some((usage) => usage.gallons === 17.5) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(17.5)}
+          >
+            <FaToilet size={40} />
+            <br />
+            Flush
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(17.5)}>
+            <FaToilet size={40} />
+            <br />
+            Flush
+          </button>
+        )}
+        {waterUsages.some((usage) => usage.gallons === 20) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(20)}
+          >
+            <FaSink size={40} />
+            <br />
+            Dishes
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(20)}>
+            <FaSink size={40} />
+            <br />
+            Dishes
+          </button>
+        )}
+        {waterUsages.some((usage) => usage.gallons === 60) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(60)}
+          >
+            <LocalCarWashIcon size={50} />
+            <br />
+            Car Wash
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(60)}>
+            <LocalCarWashIcon size={50} />
+            <br />
+            Car Wash
+          </button>
+        )}
+      </div>
 
       <br />
 
       <p>Total gallons of water used: {totalGallons}</p>
       <p>Total liters of water used: {totalLiters}</p>
+
+      {/* Add a submit button here to send array of numbers up to the db */}
     </div>
   );
 }
