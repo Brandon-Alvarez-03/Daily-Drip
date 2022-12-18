@@ -10,14 +10,13 @@ import Newsletter from "./Newsletter.jsx";
 function Main() {
   return (
     <div className="main">
-      <Tabs/>
-      {/* <Routes>
-        <Route path="/" element={<Profile />} />
+      <Routes>
+        <Route path="/" element={<Tabs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/tracker" element={<Tracker />} />
         <Route path="/newsletter" element={<Newsletter />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

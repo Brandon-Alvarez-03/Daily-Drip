@@ -10,10 +10,12 @@
 
 .scroll-to-top-arrow {
   cursor: pointer;
+  border: none;
 }
+
 
 .copyright {
   font-size: 12px;
   font-weight: 700;
-  margin-top: 15px;
+  margin: 15px 0 15px 15px;
 }

@@ -1,4 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import Profile from "../../pages/Profile";
+import Newsletter from "../../pages/Newsletter";
+import Tracker from "../../pages/Tracker";
 import "./Tabs.css";
 
 function Tabs() {
@@ -15,25 +18,25 @@ function Tabs() {
           className={selectedTab === 1 ? "active" : ""}
           onClick={() => handleTabSelection(1)}
         >
-          Tab 1
+          Water Usage Tracker
         </li>
         <li
           className={selectedTab === 2 ? "active" : ""}
           onClick={() => handleTabSelection(2)}
         >
-          Tab 2
+          Newsletter
         </li>
         <li
           className={selectedTab === 3 ? "active" : ""}
           onClick={() => handleTabSelection(3)}
         >
-          Tab 3
+          Profile
         </li>
       </ul>
       <div className="tab-content">
-        <div className={selectedTab === 1 ? "active" : ""}>Tab 1 content</div>
-        <div className={selectedTab === 2 ? "active" : ""}>Tab 2 content</div>
-        <div className={selectedTab === 3 ? "active" : ""}>Tab 3 content</div>
+        <div className={selectedTab === 1 ? "active" : ""}><Tracker/></div>
+        <div className={selectedTab === 2 ? "active" : ""}><Newsletter/></div>
+        <div className={selectedTab === 3 ? "active" : ""}><Profile/> </div>
       </div>
     </div>
   );

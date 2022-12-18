@@ -1,22 +1,28 @@
 .tabs-container {
-  width: 100vh;
+  width: 100vw;
 }
 
 .tabs {
   display: flex;
+  flex-direction: row;
   list-style: none;
   margin: 0;
   padding: 0;
   border: 1px solid rgba(100, 100, 100, 0.12);
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .tabs li {
   cursor: pointer;
   padding: 5px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-bottom: none;
-  flex: 1;
+  flex-grow: 1;
   font-size: smaller;
+  box-sizing: border-box;
+  max-width: 33.3333333%;
 }
 
 .tabs li.active {
@@ -32,6 +38,6 @@
 }
 
 .tab-content > div.active {
-  display: block;
-  height: 100%;
+  /* display: block; */
+  width: 100vw;
 }
