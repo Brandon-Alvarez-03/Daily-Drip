@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from "react";
-import {FaShower, FaToilet, FaSink} from "react-icons/fa";
-import {AiOutlineCar} from "react-icons/ai";
+import {FaToilet} from "react-icons/fa";
 import LocalCarWashIcon from "@mui/icons-material/LocalCarWash";
+import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import Bathtub from "@mui/icons-material/Bathtub";
+import Shower from "@mui/icons-material/Shower";
+import CountertopsIcon from "@mui/icons-material/Countertops";
+import Wash from "@mui/icons-material/Wash";
+
 import "./Tracker.css";
 
 function Tracker() {
@@ -43,12 +49,14 @@ function Tracker() {
 
   // Convert gallons to liters
   const totalLiters = Math.round(totalGallons * 3.78541);
+  const costPerDay = ((totalGallons * 0.003 * 100) / 100).toFixed(2);
+  const roundedCostPerDay = ((costPerDay * 100) / 100).toFixed(2);
 
   return (
     <div className="calculator">
       <h2>Water Usage Calculator</h2>
       <h6>
-        Select your daily activities to track how your daily water usage fares!
+        Select your daily activities to track how your daily water footprint!
       </h6>
       <div className="usage-options">
         {waterUsages.some((usage) => usage.gallons === 18) ? (
@@ -56,14 +64,14 @@ function Tracker() {
             style={{color: "#6495ED"}}
             onClick={() => handleRemoveUsage(18)}
           >
-            <FaShower size={40} />
+            <Shower style={{fontSize: "48px"}} />
             <br />
             Shower
           </button>
         ) : (
           <button onClick={() => handleAddUsage(18)}>
             {" "}
-            <FaShower size={40} />
+            <Shower style={{fontSize: "48px"}} />
             <br />
             Shower
           </button>
@@ -73,13 +81,13 @@ function Tracker() {
             style={{color: "#6495ED"}}
             onClick={() => handleRemoveUsage(17.5)}
           >
-            <FaToilet size={40} />
+            <FaToilet style={{fontSize: "48px"}} />
             <br />
             Flush
           </button>
         ) : (
           <button onClick={() => handleAddUsage(17.5)}>
-            <FaToilet size={40} />
+            <FaToilet style={{fontSize: "48px"}} />
             <br />
             Flush
           </button>
@@ -89,13 +97,13 @@ function Tracker() {
             style={{color: "#6495ED"}}
             onClick={() => handleRemoveUsage(20)}
           >
-            <FaSink size={40} />
+            <CountertopsIcon size={40} />
             <br />
             Dishes
           </button>
         ) : (
           <button onClick={() => handleAddUsage(20)}>
-            <FaSink size={40} />
+            <CountertopsIcon style={{fontSize: "48px"}} />
             <br />
             Dishes
           </button>
@@ -105,15 +113,79 @@ function Tracker() {
             style={{color: "#6495ED"}}
             onClick={() => handleRemoveUsage(60)}
           >
-            <LocalCarWashIcon size={50} />
+            <LocalCarWashIcon style={{fontSize: "48px"}} />
             <br />
             Car Wash
           </button>
         ) : (
           <button onClick={() => handleAddUsage(60)}>
-            <LocalCarWashIcon size={50} />
+            <LocalCarWashIcon style={{fontSize: "48px"}} />
             <br />
             Car Wash
+          </button>
+        )}
+        {waterUsages.some((usage) => usage.gallons === 30) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(30)}
+          >
+            <LocalLaundryServiceIcon style={{fontSize: "48px"}} />
+            <br />
+            Laundry
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(30)}>
+            <LocalLaundryServiceIcon style={{fontSize: "48px"}} />
+            <br />
+            Laundry
+          </button>
+        )}
+        {waterUsages.some((usage) => usage.gallons === 25) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(25)}
+          >
+            <RestaurantIcon style={{fontSize: "48px"}} />
+            <br />
+            Eating Out
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(25)}>
+            <RestaurantIcon style={{fontSize: "48px"}} />
+            <br />
+            Eating Out
+          </button>
+        )}
+        {waterUsages.some((usage) => usage.gallons === 2.5) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(2.5)}
+          >
+            <Wash style={{fontSize: "48px"}} />
+            <br />
+            Washing Hands
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(2.5)}>
+            <Wash style={{fontSize: "48px"}} />
+            <br />
+            Washing Hands
+          </button>
+        )}
+        {waterUsages.some((usage) => usage.gallons === 50) ? (
+          <button
+            style={{color: "#6495ED"}}
+            onClick={() => handleRemoveUsage(50)}
+          >
+            <Bathtub style={{fontSize: "48px"}} />
+            <br />
+            Bath
+          </button>
+        ) : (
+          <button onClick={() => handleAddUsage(50)}>
+            <Bathtub style={{fontSize: "48px"}} />
+            <br />
+            Bath
           </button>
         )}
       </div>
@@ -122,6 +194,8 @@ function Tracker() {
 
       <p>Total gallons of water used: {totalGallons}</p>
       <p>Total liters of water used: {totalLiters}</p>
+      <p>Total cost of water used (1day): ${roundedCostPerDay}</p>
+      <p>At this rate you will pay ${roundedCostPerDay * 30} every month!</p>
 
       {/* Add a submit button here to send array of numbers up to the db */}
     </div>
