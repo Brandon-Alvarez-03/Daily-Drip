@@ -1,38 +1,37 @@
 import api from "./apiConfig";
+import jwtDecode from "jwt-decode";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getUser = async (id) => {
+export const getUser = createAsyncThunk("auth/getUser", async () => {
   try {
-    const res = await api.get(`/api/user/${id}`);
-    const user = res.data;
-    return user;
+    const decoded = jwtDecode(localStorage.getItem("token"));
+    const id = decoded.user_id;
+    const { data } = await api.get(`/api/user/${id}`);
+    return data;
   } catch (error) {
     throw error;
   }
-};
+});
 
-export const signUp = async (credentials) => {
+export const signUp = createAsyncThunk("auth/register", async (credentials) => {
   try {
-    const res = await api.post("/api/auth/register/", credentials);
-    localStorage.setItem("token", res.data.access);
-    localStorage.setItem("refresh", res.data.refresh);
-    const user = res.data.user;
-    return user;
+    await api.post(`/api/auth/register/`, credentials);
   } catch (error) {
     throw error;
   }
-};
+});
 
-export const signIn = async (credentials) => {
+export const signIn = createAsyncThunk("auth/login", async (credentials) => {
   try {
-    const res = await api.post("/api/auth/login/", credentials);
-    localStorage.setItem("token", res.data.access);
-    localStorage.setItem("refresh", res.data.refresh);
-    const user = res.data.user;
-    return user;
+    const { data } = await api.post("/api/auth/login/", credentials);
+    localStorage.setItem("token", data.access);
+    localStorage.setItem("refresh", data.refresh);
+    return data;
   } catch (error) {
-    return error;
+    alert("Invalid Username or password");
+    throw error;
   }
-};
+});
 
 export const refreshToken = async () => {
   const refresh = localStorage.getItem("refresh");
@@ -41,14 +40,4 @@ export const refreshToken = async () => {
     return res.data;
   }
   return false;
-};
-
-export const signOut = async () => {
-  try {
-    localStorage.removeItem("token");
-    localStorage.removeItem("refresh");
-    return true;
-  } catch (error) {
-    throw error;
-  }
 };
