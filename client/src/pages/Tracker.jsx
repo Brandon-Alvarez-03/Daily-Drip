@@ -8,6 +8,13 @@ function Tracker() {
     setWaterUsages([...waterUsages, newUsage]);
   };
 
+  const handleRemoveUsage = (gallons) => {
+    const updatedUsages = waterUsages.filter(
+      (usage) => usage.gallons !== gallons
+    );
+    setWaterUsages(updatedUsages);
+  };
+
   // Calculate total gallons of water used
   const totalGallons = waterUsages.reduce(
     (acc, usage) => acc + usage.gallons,
@@ -23,13 +30,33 @@ function Tracker() {
       <h6>
         Select your daily activities to track how your daily water usage fares!
       </h6>
-      <button onClick={() => handleAddUsage(10)}>
-        Click here to Add 10 gals
-      </button>
-      <br />
-      <button onClick={() => handleAddUsage(20)}>
-        Click here to Add 20 gals
-      </button>
+      {waterUsages.some((usage) => usage.gallons === 10) ? (
+        <button onClick={() => handleRemoveUsage(10)}>
+          -10
+        </button>
+      ) : (
+        <button onClick={() => handleAddUsage(10)}>
+          +10
+        </button>
+      )}
+      {waterUsages.some((usage) => usage.gallons === 20) ? (
+        <button onClick={() => handleRemoveUsage(20)}>
+          -20
+        </button>
+      ) : (
+        <button onClick={() => handleAddUsage(20)}>
+          +20
+        </button>
+      )}
+      {waterUsages.some((usage) => usage.gallons === 30) ? (
+        <button onClick={() => handleRemoveUsage(30)}>
+          -30
+        </button>
+      ) : (
+        <button onClick={() => handleAddUsage(30)}>
+          +30
+        </button>
+      )}
 
       <br />
 
