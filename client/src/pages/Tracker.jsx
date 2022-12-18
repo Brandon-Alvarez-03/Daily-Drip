@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {FaShower, FaToilet, FaSink} from "react-icons/fa";
 import {AiOutlineCar} from "react-icons/ai";
 import LocalCarWashIcon from "@mui/icons-material/LocalCarWash";
-import "./Tracker.css"
+import "./Tracker.css";
 
 function Tracker() {
   const initialUsages = JSON.parse(localStorage.getItem("waterUsages")) || [];
@@ -50,52 +50,52 @@ function Tracker() {
       <h6>
         Select your daily activities to track how your daily water usage fares!
       </h6>
-      {waterUsages.some((usage) => usage.gallons === 10) ? (
-        <button onClick={() => handleRemoveUsage(10)}>
+      {waterUsages.some((usage) => usage.gallons === 18) ? (
+        <button onClick={() => handleRemoveUsage(18)}>
           <FaShower style={{color: "#6495ED"}} />
         </button>
       ) : (
-        <button onClick={() => handleAddUsage(10)}>
+        <button onClick={() => handleAddUsage(18)}>
           {" "}
           <FaShower />
         </button>
       )}
-      {waterUsages.some((usage) => usage.gallons === 20) ? (
-        <button onClick={() => handleRemoveUsage(20)}>
+      {waterUsages.some((usage) => usage.gallons === 3.5) ? (
+        <button onClick={() => handleRemoveUsage(3.5)}>
           <FaToilet style={{color: "#6495ED"}} />
         </button>
       ) : (
-        <button onClick={() => handleAddUsage(20)}>
+        <button onClick={() => handleAddUsage(3.5)}>
           <FaToilet />
         </button>
       )}
-      {waterUsages.some((usage) => usage.gallons === 30) ? (
+      {waterUsages.some((usage) => usage.gallons === 20) ? (
         <button
           style={{color: "#6495ED"}}
-          onClick={() => handleRemoveUsage(30)}
+          onClick={() => handleRemoveUsage(20)}
         >
           <FaSink style={{color: "#6495ED"}} size={40} />
           <br />
           Dishes
         </button>
       ) : (
-        <button onClick={() => handleAddUsage(30)}>
+        <button onClick={() => handleAddUsage(20)}>
           <FaSink size={40} />
           <br />
           Dishes
         </button>
       )}
-      {waterUsages.some((usage) => usage.gallons === 22) ? (
+      {waterUsages.some((usage) => usage.gallons === 60) ? (
         <button
           style={{color: "#6495ED"}}
-          onClick={() => handleRemoveUsage(22)}
+          onClick={() => handleRemoveUsage(60)}
         >
           <AiOutlineCar style={{color: "#6495ED"}} size={40} />
           <br />
           Car Wash
         </button>
       ) : (
-        <button onClick={() => handleAddUsage(22)}>
+        <button onClick={() => handleAddUsage(60)}>
           <AiOutlineCar size={40} />
           <br />
           Car Wash
