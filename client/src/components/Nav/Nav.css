@@ -1,6 +1,6 @@
 .nav-container {
   height: var(--app-height-variable);
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
   z-index: 999;
   /* background: rgb(40,40,40); */
@@ -10,7 +10,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: steelblue
+  color: steelblue;
+  /* box-sizing: border-box; */
 }
 
 .username-display {
