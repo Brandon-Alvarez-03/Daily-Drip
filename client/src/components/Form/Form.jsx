@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { createDay } from "../../services/day"
+import { createDay } from "../../services/day";
 import categoryOptions from "./categories";
 
 function Form() {
@@ -19,48 +19,49 @@ function Form() {
       };
       await createDay(data);
       navigate(`/dashboard`);
+      alert("Dont use too Much!")
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-      <div className="create-day-container">
-        <form onSubmit={handleSubmit} className="day-details">
-            <input
-              type="text"
-              id="description"
-              placeholder="Description"
-              name="description"
-              ref={descriptionRef}
-            />
-            <input
-              type="number"
-              id="usage"
-              placeholder="Usage"
-              name="usage"
-              ref={usageRef}
-            />
-            <select
-              name="category"
-              className="select"
-              ref={categoryRef}
-              id="category"
-              placeholder="Category"
-            >
-              {categoryOptions.map((option, index) => {
-                return (
-                  <option value={option.category} key={index}>
-                    {option.title}
-                  </option>
-                );
-              })}
-            </select>
-            <button type="submit" id="day-button">
-              Submit
-            </button>
-        </form>
-      </div>
+    <div className="create-day-container">
+      <form onSubmit={handleSubmit} className="day-details">
+        <input
+          type="text"
+          id="description"
+          placeholder="Description"
+          name="description"
+          ref={descriptionRef}
+        />
+        <input
+          type="number"
+          id="usage"
+          placeholder="Usage"
+          name="usage"
+          ref={usageRef}
+        />
+        <select
+          name="category"
+          className="select"
+          ref={categoryRef}
+          id="category"
+          placeholder="Category"
+        >
+          {categoryOptions.map((option, index) => {
+            return (
+              <option value={option.category} key={index}>
+                {option.title}
+              </option>
+            );
+          })}
+        </select>
+        <button type="submit" id="day-button">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
 
