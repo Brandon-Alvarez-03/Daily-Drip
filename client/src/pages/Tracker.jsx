@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Tracker() {
-  const waterUsages = [
-    {gallons: 10},
-    {gallons: 20},
-    {gallons: 30},
-    {gallons: 40},
-  ];
+  const [waterUsages, setWaterUsages] = useState([]);
+
+  const handleAddUsage = (gallons) => {
+    const newUsage = {gallons};
+    setWaterUsages([...waterUsages, newUsage]);
+  };
 
   // Calculate total gallons of water used
   const totalGallons = waterUsages.reduce(
@@ -20,6 +20,19 @@ function Tracker() {
   return (
     <div>
       <h2>Water Usage Calculator</h2>
+      <h6>
+        Select your daily activities to track how your daily water usage fares!
+      </h6>
+      <button onClick={() => handleAddUsage(10)}>
+        Click here to Add 10 gals
+      </button>
+      <br />
+      <button onClick={() => handleAddUsage(20)}>
+        Click here to Add 20 gals
+      </button>
+
+      <br />
+
       <p>Total gallons of water used: {totalGallons}</p>
       <p>Total liters of water used: {totalLiters}</p>
     </div>
