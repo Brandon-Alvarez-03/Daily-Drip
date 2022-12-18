@@ -1,3 +1,5 @@
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {AiOutlineDown} from "react-icons/ai";
 import {FaRegUserCircle} from "react-icons/fa";
@@ -7,8 +9,19 @@ import {LinkContainer} from "react-router-bootstrap";
 import logo from "../../assets/logos/droplet.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Nav.css";
+import {getUser} from "../../services/user";
+import {logout} from "../../store/slices/authSlice";
 
 function NavBar() {
+  const {token, userInfo} = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getUser());
+    }
+  }, [token, dispatch]);
+
   return (
     <Navbar expand="sm" className={"nav-container"} fixed="top">
       <Link to="/">
@@ -17,16 +30,23 @@ function NavBar() {
         </Navbar.Brand>
       </Link>
 
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="nav ms-auto">
-          <LinkContainer to="/signup">
-            <Nav.Link>Sign up</Nav.Link>
-          </LinkContainer>
+      <button className="button" onClick={() => dispatch(logout())}>
+        Logout
+      </button>
 
-          <LinkContainer to="/login">
-            <Nav.Link>Login </Nav.Link>
-          </LinkContainer>
-        </Nav>
+      <Navbar.Collapse id="basic-navbar-nav">
+
+        {userInfo &&
+          <Nav className="nav ms-auto">
+            <LinkContainer to="/signup">
+              <Nav.Link>Sign up</Nav.Link>
+            </LinkContainer>
+        
+            <LinkContainer to="/login">
+              <Nav.Link>Login </Nav.Link>
+            </LinkContainer>
+          </Nav>
+        }
       </Navbar.Collapse>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="nav-toggler" />

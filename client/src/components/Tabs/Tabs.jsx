@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Profile from "../../pages/Profile";
+import DashBoard from "../../pages/DashBoard";
 import Newsletter from "../../pages/Newsletter";
 import Tracker from "../../pages/Tracker";
 import "./Tabs.css";
@@ -30,13 +30,13 @@ function Tabs() {
           className={selectedTab === 3 ? "active" : ""}
           onClick={() => handleTabSelection(3)}
         >
-          Profile
+          Dashboard
         </li>
       </ul>
       <div className="tab-content">
         <div className={selectedTab === 1 ? "active" : ""}><Tracker/></div>
         <div className={selectedTab === 2 ? "active" : ""}><Newsletter/></div>
-        <div className={selectedTab === 3 ? "active" : ""}><Profile/> </div>
+        <div className={selectedTab === 3 ? "active" : ""}><DashBoard/> </div>
       </div>
     </div>
   );
