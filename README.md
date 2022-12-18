@@ -38,6 +38,7 @@ Victor Apaez
 - react-router-dom
 - materialUI-icons
 - chart.js
+- react-hook-forms
 
 ### Back End
 
@@ -51,6 +52,7 @@ Victor Apaez
 - cors-header
 - python.env
 - pyscopg2-binary
+- gunicorn
 
 ## Credits
 [Water Animation](https://codepen.io/jaronwhite/pen/zrmozE)
