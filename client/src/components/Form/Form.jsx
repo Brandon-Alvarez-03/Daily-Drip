@@ -1,4 +1,4 @@
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {createDay} from "../../services/day";
 import categoryOptions from "./categories";
@@ -8,7 +8,17 @@ function Form({totalLiters}) {
   const descriptionRef = useRef();
   const categoryRef = useRef();
   const usageRef = useRef();
+  const unitRef = useRef(); // Add a reference for the hidden input field that holds the unit value
   const navigate = useNavigate();
+  const [unit, setUnit] = useState("liters"); // Add a state variable to store the selected unit
+
+  const handleUnitChange = (event) => {
+    setUnit(event.target.value); // Update the unit state when the user selects a different unit
+  };
+
+  // Convert the totalLiters value to gallons if the user selects the "gallons" option
+  const total =
+    unit === "gallons" ? Math.round(totalLiters / 3.78541) : totalLiters;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +27,7 @@ function Form({totalLiters}) {
         description: descriptionRef.current.value,
         category: categoryRef.current.value,
         usage: usageRef.current.value,
+        unit: unit, // Add the unit value to the data object
       };
       await createDay(data);
       navigate(`/dashboard`);
@@ -31,7 +42,7 @@ function Form({totalLiters}) {
         <input
           type="text"
           id="description"
-          placeholder="Description"
+          placeholder="Describe Activity!"
           name="description"
           ref={descriptionRef}
         />
@@ -41,8 +52,12 @@ function Form({totalLiters}) {
           placeholder="Gals or Liters"
           name="usage"
           ref={usageRef}
-          value={totalLiters}
+          value={total}
         />
+        <select onChange={handleUnitChange}>
+          <option value="liters">Liters</option>
+          <option value="gallons">Gallons</option>
+        </select>
         <select
           name="category"
           className="select"
