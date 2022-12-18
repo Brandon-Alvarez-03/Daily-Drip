@@ -1,4 +1,11 @@
 
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
 .usage-options {
   width: 95%;
   display: flex;
@@ -12,4 +19,12 @@
   min-height: 120px;
   flex-basis: 120px;
   margin-bottom: 10px;
+}
+
+.calculator p {
+  font-family: "Circular", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgba(100, 149, 237, 1.2);
 }
