@@ -13,8 +13,8 @@ function Main() {
   return (
     <div className="main">
       <Routes>
-        <Route path="/" element={<Tabs />} />
         <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<Tabs />} />
           <Route path="/dashboard" element={<DashBoard />} />
         </Route>
         <Route path="/login" element={<Login />} />

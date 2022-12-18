@@ -15,8 +15,12 @@ export const getUser = createAsyncThunk("auth/getUser", async () => {
 
 export const signUp = createAsyncThunk("auth/register", async (credentials) => {
   try {
-    await api.post(`/api/auth/register/`, credentials);
+    const { data } = await api.post(`/api/auth/register/`, credentials);
+    localStorage.setItem("token", data.access);
+    localStorage.setItem("refresh", data.refresh);
+    return data;
   } catch (error) {
+    console.log(error)
     throw error;
   }
 });
