@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { createDay } from "../../services/day";
 import categoryOptions from "./categories";
+import "./Form.css"
 
 function Form() {
   const descriptionRef = useRef();

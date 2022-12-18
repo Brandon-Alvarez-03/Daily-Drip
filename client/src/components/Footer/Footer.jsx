@@ -5,9 +5,9 @@ function Footer({handleScrollToTop}) {
   return (
     <div className="footer">
       <p className="copyright">Copyright {new Date().getFullYear()}</p>
-      <button className="return-to-top-arrow" onClick={handleScrollToTop}>
+      {/* <button className="return-to-top-arrow" onClick={handleScrollToTop}>
         <FaArrowUp size={25} />
-      </button>
+      </button> */}
     </div>
   );
 }
