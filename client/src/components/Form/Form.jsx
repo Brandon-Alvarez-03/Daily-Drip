@@ -31,6 +31,7 @@ function Form({totalLiters}) {
       };
       await createDay(data);
       navigate(`/dashboard`);
+      alert("Dont use too Much!")
     } catch (error) {
       console.error(error);
     }

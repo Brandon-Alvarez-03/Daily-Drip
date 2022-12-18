@@ -1,0 +1,22 @@
+.dash-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.dash-items {
+  width: 100%;
+  display: flex;
+}
+.dash-desc {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.LG {
+  width: 100%;
+}
+
+.bar{
+  width: 75%;
+}
