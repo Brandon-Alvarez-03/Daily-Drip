@@ -18,6 +18,7 @@ function Login() {
   }, [navigate, userInfo]);
 
   const submitForm = (data) => {
+    data.username = data.username.toLowerCase();
     dispatch(signIn(data));
   };
 
