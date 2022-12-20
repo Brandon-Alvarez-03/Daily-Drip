@@ -27,6 +27,10 @@ function Signup() {
       setCustomError("Password mismatch");
       return;
     }
+    if (data.password.length < 8) {
+      setCustomError("Password need to be atleast 8 characters");
+      return;
+    }
     data.username = data.username.toLowerCase();
     data.email = data.email.toLowerCase();
     dispatch(signUp(data));
@@ -64,6 +68,7 @@ function Signup() {
           <input
             type="password"
             placeholder="Enter Password"
+            minLength="8"
             className="form-input"
             {...register("password")}
             required
